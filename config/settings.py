@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7w1ssqz2hw%p$dm6!y4b9ww@zauft9hxbi+$a&k7@&$odi69&7'
+SECRET_KEY = 'django-insecure-6$5nc#17qrgza5nz%2m-n%w_0+4c8hkk+vr*fjh45k*)#j6(a+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
-    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +80,7 @@ DATABASES = {
         'NAME': 'idebaz',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'F@rzin123'
+        'PASSWORD': 'Farzin1369007'
     }
 }
 
@@ -122,8 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
