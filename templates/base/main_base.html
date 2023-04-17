@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
     <!-- Title  -->
-    <title>{% block title %}---{% endblock title %}IDEBAZ Creative Agency</title>
+    <title>{% block title %}{% endblock title %}IDEBAZ Creative Agency</title>
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
     {% include 'base/_header_refrences.html' %}
     <meta property="og:site_name" content="IDEBAZ Creative Agency"/>
 </head>
