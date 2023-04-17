@@ -584,7 +584,7 @@ img {
     opacity: 0;
     position: absolute;
     left: 120px;
-    top: 250px;
+    top: 20%;
     width: 450px;
     text-align: justify;
     transition: 1s ease-in-out;
