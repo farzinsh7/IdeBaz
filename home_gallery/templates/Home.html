@@ -97,26 +97,23 @@
 <div class="social-sidebar-area bg-white">
     <!-- Social Area -->
     <div class="social-info-area">
-        <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"
+        <a href="{{ info.facebook }}" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"
                 aria-hidden="true"></i> <span>Facebook</span></a>
-        <a href="#" data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"
-                aria-hidden="true"></i> <span>Twitter</span></a>
-        <a href="#" data-toggle="tooltip" data-placement="right" title="Pinterest"><i class="fa fa-pinterest"
+        <a href="{{ info.linkedin }}" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"
+                aria-hidden="true"></i> <span>Linkedin</span></a>
+        <a href="{{ info.pinterest }}" data-toggle="tooltip" data-placement="right" title="Pinterest"><i class="fa fa-pinterest"
                 aria-hidden="true"></i> <span>Pinterest</span></a>
-        <a href="#" data-toggle="tooltip" data-placement="right" title="Behance"><i class="fa fa-behance"
-                aria-hidden="true"></i> <span>Behance</span></a>
+        <a href="{{ info.Instagram }}" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"
+                aria-hidden="true"></i> <span>Instagram</span></a>
     </div>
     <div class="container about-ide">
-        <h1 class="title">IdeBaz</h1>
-        <!-- <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a> -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat.</p>
+        <h1 class="title">{{ info.title }}</h1>
+        <p>{{ info.description }}</p>
         <button type="button" class="btn btn-ligh">About IdeBaz</button>
     </div>
     <!-- Message Box -->
     <div class="message-box">
-        <a href="#" data-toggle="modal" data-target=".contact-modal-lg"><img src="{% static 'img/core-img/envelope.png' %}"
+        <a href="{{info.email}}" data-toggle="modal" data-target=".contact-modal-lg"><img src="{% static 'img/core-img/envelope.png' %}"
                 alt=""></a>
     </div>
 </div>
