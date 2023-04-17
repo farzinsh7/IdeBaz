@@ -21,8 +21,19 @@ class HomeGallery(models.Model):
     main_img = models.ImageField(upload_to=upload_gallery_image_path)
     thumbnail = models.ImageField(upload_to=upload_gallery_image_path)
 
-
     def __str__(self):
         return self.title
 
 
+class Information(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    facebook = models.SlugField(null=True)
+    instagram = models.SlugField(null=True)
+    pinterest = models.SlugField(null=True)
+    linkedin = models.SlugField(null=True)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.title
+    
