@@ -1,3 +1,4 @@
+{% load render_partial %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,10 @@
     <meta property="og:site_name" content="IDEBAZ Creative Agency"/>
 </head>
 <body>
+{% include 'base/_preload.html'%}
+<!-- Gradient Background Overlay -->
+<div class="gradient-background-overlay"></div>
+{% render_partial 'homepage:header' %}
 {% block content%}{% endblock content %}
 {% include 'base/_footer_refrences.html'%}
 </body>
