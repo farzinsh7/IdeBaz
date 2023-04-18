@@ -128,7 +128,7 @@
             <div class="carousel-item h-100 bg-img {% if forloop.first %} active{% endif %}" style="background-image: url({{ item.main_img.url }});">
                 <div class="carousel-content h-100">
                     <div class="slide-text">
-                        <span>{{ forloop.counter }}.</span>
+                        <span>{% if forloop.counter < 10 %}0{% endif %}{{ forloop.counter }}.</span>
                         <h2>{{ item.title }}</h2>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
         <!-- Carousel Indicators -->
         <ol class="carousel-indicators">
                 {% for item in gallery %}
-                <li data-target="#welcomeSlider" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %} active{% endif %} bg-img"
+                <li data-target="#welcomeSlider" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %} bg-img"
                 style="background-image: url({{ item.thumbnail.url }});"></li>
                 {% endfor %}
         </ol>
