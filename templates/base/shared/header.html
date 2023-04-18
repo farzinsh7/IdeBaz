@@ -1,4 +1,6 @@
 {% load static %}
+<!-- Gradient Background Overlay -->
+<div class="gradient-background-overlay"></div>
 <!-- Header Area Start -->
 <header class="header-area">
     <div class="container-fluid h-100">
@@ -69,13 +71,13 @@
 <div class="social-sidebar-area bg-white">
     <!-- Social Area -->
     <div class="social-info-area">
-        <a href="{{ info.facebook }}" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"
+        <a href="https://www.facebook.com/{{ info.facebook }}" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"
                 aria-hidden="true"></i> <span>Facebook</span></a>
-        <a href="{{ info.linkedin }}" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"
+        <a href="https://www.linkedin.com/{{ info.linkedin }}" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"
                 aria-hidden="true"></i> <span>Linkedin</span></a>
-        <a href="{{ info.pinterest }}" data-toggle="tooltip" data-placement="right" title="Pinterest"><i class="fa fa-pinterest"
+        <a href="https://www.pinterest.com/{{ info.pinterest }}" data-toggle="tooltip" data-placement="right" title="Pinterest"><i class="fa fa-pinterest"
                 aria-hidden="true"></i> <span>Pinterest</span></a>
-        <a href="{{ info.Instagram }}" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"
+        <a href="https://www.instagram.com/{{ info.Instagram }}" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"
                 aria-hidden="true"></i> <span>Instagram</span></a>
     </div>
     {% if request.resolver_match.url_name == 'information' %}
@@ -86,7 +88,7 @@
     </div>
     <!-- Message Box -->
     <div class="message-box">
-        <a href="{{info.email}}" data-toggle="modal" data-target=".contact-modal-lg"><img src="{% static 'img/core-img/envelope.png' %}"
+        <a href="mailto:{{info.email}}" data-toggle="modal" data-target=".contact-modal-lg"><img src="{% static 'img/core-img/envelope.png' %}"
                 alt=""></a>
     </div>
     {% endif %}

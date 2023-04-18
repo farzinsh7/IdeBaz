@@ -5,11 +5,18 @@ from .models import HomeGallery, Information
 
 # Create your views here.
 
-class InformationListView(ListView):
+class HeaderView(ListView):
     model = Information
     queryset = Information.objects.first()
     context_object_name = "info"
     template_name = "base/shared/header.html"
+
+
+class FooterView(ListView):
+    model = Information
+    queryset = Information.objects.first()
+    context_object_name = "info"
+    template_name = "base/shared/footer.html"
 
 
 def home_iformation(request):

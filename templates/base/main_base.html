@@ -15,10 +15,9 @@
 </head>
 <body>
 {% include 'base/_preload.html'%}
-<!-- Gradient Background Overlay -->
-<div class="gradient-background-overlay"></div>
 {% render_partial 'homepage:header' %}
 {% block content%}{% endblock content %}
+{% render_partial 'homepage:footer' %}
 {% include 'base/_footer_refrences.html'%}
 </body>
 </html>
