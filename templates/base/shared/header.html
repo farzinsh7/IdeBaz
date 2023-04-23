@@ -2,7 +2,7 @@
 <!-- Gradient Background Overlay -->
 <div class="gradient-background-overlay"></div>
 <!-- Header Area Start -->
-<header class="header-area">
+<header class="header-area {% if not request.resolver_match.url_name == 'information' %}bg-img{% endif %}" {% if not request.resolver_match.url_name == 'information' %}style="background-image: url({% static 'img/bg-img/14.jpg' %});"{% endif %}>
     <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 h-100">
@@ -68,7 +68,7 @@
 </header>
 <!-- Header Area End -->
 <!-- Social Sidebar Area Start -->
-<div class="social-sidebar-area bg-white">
+<div class="social-sidebar-area {% if request.resolver_match.url_name == 'information' %}bg-white{% endif %}">
     <!-- Social Area -->
     <div class="social-info-area">
         <a href="https://www.facebook.com/{{ info.facebook }}" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"
