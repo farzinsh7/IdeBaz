@@ -28,6 +28,7 @@ class HomeGallery(models.Model):
 class Information(models.Model):
     title = models.CharField(max_length=150)
     logo = models.ImageField(null=True, upload_to="core")
+    logo_hover = models.ImageField(null=True, upload_to="core")
     description = models.TextField()
     facebook = models.SlugField(null=True)
     instagram = models.SlugField(null=True)
