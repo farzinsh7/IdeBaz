@@ -7,106 +7,41 @@
         <div class="row justify-content-center">
             <div class="col-10">
                 <div class="about-me-thumb">
-                    <img src="{% static 'img/bg-img/about-me.jpg' %}" alt="">
+                    <img src="{{ about.image.url }}" alt="{{ about.title }}">
                 </div>
             </div>
             <div class="col-10">
                 <div class="about-content mt-100 mb-100 text-center">
-                    <span></span>
-                    <h2>What can I tell you about me?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate id justo quis facilisis. Vestibulum id orci ligula. Sed tempor, nunc ut sodales pulvinar, mauris ante euismod magna, at elementum lectus leo sed enim. Praesent dictum suscipit tincidunt. Nulla facilisi. Aenean in mollis orci. Ut interdum vulputate ante a egestas. Pellentesque varius purus malesuada arcu semper vehicula.</p>
+                    {% comment %} <span></span> {% endcomment %}
+                    <h2>{{ about.title }}</h2>
+                    <p>{{ about.description }}</p>
                 </div>
             </div>
             <div class="col-10">
                 <div class="row">
+                    {% for item in services %}
                     <div class="col-12 col-md-4">
-                        <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <img src="{% static 'img/core-img/heart.png' %}" alt="">
-                            <h5>Wedding Photography</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
+                        <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+                            <img src="{{ item.image_icon.url }}" alt="{{ item.title }}">
+                            <h5>{{ item.title }}</h5>
+                            <p>{{ item.description }}.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.4s">
-                            <img src="{% static 'img/core-img/photo-camera.png' %}" alt="">
-                            <h5>Studio Photography</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.9s">
-                            <img src="{% static 'img/core-img/video-camera.png' %}" alt="">
-                            <h5>Portraits Photography</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-10">
                 <!-- Pie Bars Area Start -->
                 <div class="our-skills-area text-center">
                     <div class="row">
+                        {% for item in skills %}
                         <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="75">
+                            <div class="single-pie-bar" data-percent="{{ item.value }}">
                                 <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Fashion</h6>
+                                <h6>{{ item.title }}</h6>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="83">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Portraits</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="25">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Studio</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 pt-5 col-md-3">
-                            <div class="single-pie-bar" data-percent="95">
-                                <canvas class="bar-circle" width="100" height="100"></canvas>
-                                <h6>Weddings</h6>
-                            </div>
-                        </div>
-
+                        {% endfor %}
                     </div>
                 </div>
             </div>
