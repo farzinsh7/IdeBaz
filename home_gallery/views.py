@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import HomeGallery, Information
 from contact_us.models import ContactForm
-from .forms import ContactFormClass
+from contact_us.forms import ContactFormClass
 
 # Create your views here.
 

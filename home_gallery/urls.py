@@ -1,5 +1,5 @@
 from django.urls import path
-from home_gallery.views import  HeaderView, FooterView, HomeInformation
+from .views import  HeaderView, FooterView, HomeInformation
 
 app_name = 'homepage'
 

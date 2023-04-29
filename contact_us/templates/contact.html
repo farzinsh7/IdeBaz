@@ -1,0 +1,78 @@
+{% extends 'base/main_base.html' %}
+{% load static %}
+{% block content %}
+<!-- Social Sidebar Area End -->
+
+<section class="contact-area section_padding_100 mt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="contact-heading-text text-center mb-100">
+                    <span></span>
+                    <h2>{{ contact.title }}</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate id justo quis facilisis. Vestibulum id orci ligula. Sed tempor, nunc ut sodales pulvinar, mauris ante euismod magna, at elementum lectus leo sed enim. Praesent dictum suscipit tincidunt. Nulla facilisi. Aenean in mollis orci. Ut interdum vulputate ante a egestas. Pellentesque varius purus malesuada arcu semper vehicula.</p>
+                </div>
+            </div>
+            <!-- Contact Form Area -->
+            <div class="col-10">
+                <div class="contact-form-area">
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                    {{ form.name }}
+                            </div>
+                            <div class="col-12 col-md-4">
+                                    {{ form.email }}
+                            </div>
+                            <div class="col-12 col-md-4">
+                                    {{ form.subject }}
+                            </div>
+                            <div class="col-12">
+                                    {{ form.message }}
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn studio-btn mt-3"><img
+                                        src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Google Maps -->
+<div class="map-area">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-10">
+                <div id="googleMap">
+                    <img src="{{ contact.image.url }}" alt="">
+                </div>
+                <!-- Contact Info -->
+                <div class="contact-core-info d-flex align-items-center wow fadeInLeftBig" data-wow-delay="1s" data-wow-duration="1000ms">
+                    <div class="contactInfo">
+                        <img src="{{ info.logo.url }}" alt="">
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="{% static 'img/core-img/map.png' %}" alt="">
+                            <a href="#">{{ info.address }}</a>
+                        </div>
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="img/core-img/smartphone.png" alt="">
+                            <a href="tel:{{ info.phone }}">{{ info.phone }}</a>
+                        </div>
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="img/core-img/envelope-2.png" alt="">
+                            <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -11,4 +11,16 @@ class ContactForm(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+class ContactUS(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    image = models.ImageField()
+    map = models.URLField()
+
+    def __str__(self):
+        return self.title
+    
+
     
