@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('home_gallery.urls')),
     path('', include('about_us.urls')),
     path('', include('contact_us.urls')),
+    path('', include('articles.urls')),
 ]
 
 if settings.DEBUG:

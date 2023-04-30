@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home_gallery.apps.HomeGalleryConfig',
     'about_us.apps.AboutUsConfig',
     'contact_us.apps.ContactUsConfig',
+    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [
