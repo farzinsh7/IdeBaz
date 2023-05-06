@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.html import format_html
 from account.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 # from django.contrib.contenttypes.fields import GenericRelation
 # from django.urls import reverse
 # from comment.models import Comment
@@ -54,7 +55,7 @@ class Article(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     category = models.ManyToManyField(Category, related_name='articles')
     tags = models.ManyToManyField(Tags, related_name='articles', blank=True)
-    description = models.TextField()
+    description = RichTextUploadingField()
     image = models.ImageField(upload_to='article')
     image_thumbnail = models.ImageField(upload_to='article')
     publish = models.DateTimeField(default=timezone.now)

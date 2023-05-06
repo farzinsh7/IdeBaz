@@ -23,3 +23,20 @@ class ArticleDetailView(DetailView):
         context['tags'] = Tags.objects.filter(status=True)
         context['category'] = Category.objects.filter(status=True) 
         return context
+
+
+# class TagList(ListView):
+#     model = Tags
+#     paginate_by = 6
+#     template_name = 'tags.html'
+
+#     def get_queryset(self):
+#         global tag
+#         slug = self.kwargs.get('slug')
+#         tag = Tags.objects.filter(slug=slug)
+#         return tag.articles.published()
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['tag'] = tag
+#         return context

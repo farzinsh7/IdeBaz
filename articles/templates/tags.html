@@ -1,0 +1,42 @@
+{% comment %} {% extends 'base/main_base.html' %}
+{% load static%}
+{% block content%}
+<!-- Blog Area Start -->
+<section class="blog-area section_padding_100 mt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Single Blog Area -->
+            {% for item in tag %}
+            <div class="col-10">
+                <div class="single-blog-area text-center mb-100 wow fadeInUpBig" data-wow-delay="100ms" data-wow-duration="1s">
+                    <div class="blog-thumbnail mb-100">
+                        <img src="{{ blog.image.url }}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <span></span>
+                        <h2>{{ item.title }}</h2>
+                        <a href="#" class="post-date">{{ item.created|date:"M d, Y" }}</a>
+                        <a href="#" class="post-author">By {{ item.author }}</a>
+                        <p>{{ item.description|truncatewords:65 }}</p>
+                        <a href="{% url 'article:detail_view' blog.slug %}" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Pagination -->
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation" class="pagination-area mb-100">
+                    <ul class="pagination justify-content-center">
+                        {% for page in paginator.page_range %}
+                        <li class="page-item {% if page == request.GET.page|default:1|add:0 %} active{% endif %}"><a class="page-link" href="?page={{ page }}">0{{ forloop.counter }}.</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Area End -->
+{% endblock %} {% endcomment %}

@@ -16,7 +16,8 @@
                         <h2>{{ article.title }}</h2>
                         <a href="#" class="post-date">{{ article.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ article.author }}</a>
-                        <p>{{ article.description }}</p>
+                        <p>{{ article.description|safe }}</p>
+                        <p>Tags: {% for tag in article.tags.all %}<a href="#" class="col-2 mx-2 btn btn-secondary">{{ tag.title }}</a>{% endfor %}</p>
                     </div>
                 </div>
             </div>
