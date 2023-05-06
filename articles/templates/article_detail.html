@@ -1,0 +1,27 @@
+{% extends 'base/main_base.html' %}
+{% load static%}
+{% block content%}
+<!-- Blog Area Start -->
+<section class="blog-area section_padding_100 mt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Single Blog Area -->
+            <div class="col-10">
+                <div class="single-blog-area text-center mb-100 wow fadeInUpBig" data-wow-delay="100ms" data-wow-duration="1s">
+                    <div class="blog-thumbnail mb-100">
+                        <img src="{{ article.image.url }}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <span></span>
+                        <h2>{{ article.title }}</h2>
+                        <a href="#" class="post-date">{{ article.created|date:"M d, Y" }}</a>
+                        <a href="#" class="post-author">By {{ article.author }}</a>
+                        <p>{{ article.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Area End -->
+{% endblock %}

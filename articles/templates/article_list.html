@@ -18,7 +18,7 @@
                         <a href="#" class="post-date">{{ blog.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ blog.author }}</a>
                         <p>{{ blog.description|truncatewords:65 }}</p>
-                        <a href="#" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Read More</a>
+                        <a href="{% url 'article:detail_view' blog.slug %}" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Read More</a>
                     </div>
                 </div>
             </div>
