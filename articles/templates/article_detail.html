@@ -17,7 +17,7 @@
                         <a href="#" class="post-date">{{ article.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ article.author }}</a>
                         <p>{{ article.description|safe }}</p>
-                        <p>Tags: {% for tag in article.tags.all %}<a href="#" class="col-2 mx-2 btn btn-secondary">{{ tag.title }}</a>{% endfor %}</p>
+                        <p>Tags: {% for tag in article.tags.all %}<a href="{% url 'article:tag_view' tag.slug %}" class="col-2 mx-2 px-2 py-1 btn-secondary">{{ tag.title }}</a>{% endfor %}</p>
                     </div>
                 </div>
             </div>
