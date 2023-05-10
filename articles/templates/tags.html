@@ -17,8 +17,8 @@
                         <h2>{{ item.title }}</h2>
                         <a href="#" class="post-date">{{ item.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ item.author }}</a>
-                        <p>{{ item.description|truncatewords:65 }}</p>
-                        <a href="{% url 'article:detail_view' item.slug %}" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Read More</a>
+                        <p>{{ item.description|truncatewords:65|safe }}</p>
+                        <a href="{% url 'article:detail_view' item.slug %}" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt="{{ item.title }}"> Read More</a>
                     </div>
                 </div>
             </div>

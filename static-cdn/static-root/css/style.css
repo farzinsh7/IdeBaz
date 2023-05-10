@@ -1,9 +1,11 @@
 .logo {
     position: relative;
-    width: 147px; /* set the desired width of the logo */
-    height: 37px; /* set height to auto to maintain aspect ratio */
-  }
-  
+    width: 147px;
+    /* set the desired width of the logo */
+    height: 37px;
+    /* set height to auto to maintain aspect ratio */
+}
+
 .logo img {
     position: absolute;
     top: 0;
@@ -12,17 +14,17 @@
     height: 100%;
     object-fit: contain;
 }
-  
+
 .logo .img-2 {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-  
+
 .logo:hover .img-1 {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-  
+
 .logo:hover .img-2 {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -30,7 +32,7 @@
 
 @media (max-width: 768px) {
     .logo {
-        width: 107px; 
-        height: 27px; 
-      }
-}   
+        width: 107px;
+        height: 27px;
+    }
+}
