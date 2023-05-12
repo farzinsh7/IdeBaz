@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'projects.apps.ProjectsConfig'
 ]
 
 MIDDLEWARE = [
@@ -87,7 +88,7 @@ DATABASES = {
         'NAME': 'idebaz',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'F@rzin123'
+        'PASSWORD': 'Farzin1369007'
     }
 }
 
