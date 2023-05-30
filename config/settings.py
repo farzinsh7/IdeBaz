@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'projects.apps.ProjectsConfig'
+    'projects.apps.ProjectsConfig',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
