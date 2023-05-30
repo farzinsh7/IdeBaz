@@ -36,3 +36,10 @@
         height: 27px;
     }
 }
+
+.gallery_img i{
+    padding-right: 10px;
+}
+.gallery_link i{
+    padding-left: 10px;
+}

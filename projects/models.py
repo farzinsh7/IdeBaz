@@ -2,6 +2,11 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
+class ProjectManager(models.Manager):
+    def published(self):
+        return self.filter(status='p')
+
+
 class Category(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=200, unique=True)
@@ -34,6 +39,7 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    objects = ProjectManager()
 
 class ProjectGallery(models.Model):
     title = models.CharField(max_length=120)

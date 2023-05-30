@@ -12,5 +12,6 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectGalleryAdmin]
 
 
-
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ["title"]}

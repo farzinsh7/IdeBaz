@@ -863,7 +863,7 @@ img {
 /* :: 10.0 Portfolio Area CSS */
 
 .gallery_area {
-    height: calc(100% - 380px);
+    height: calc(100% - 300px);
     width: calc(100% - 245px);
     overflow-y: scroll;
     position: fixed;

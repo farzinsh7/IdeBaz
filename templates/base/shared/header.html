@@ -10,8 +10,8 @@
                     <nav class="navbar h-100 navbar-expand-lg">
                         <!-- Logo Area  -->
                         <div class="logo">
-                            <a class="navbar-brand" href="index.html"><img src="{{ info.logo.url }}" alt="Logo" class="img-1"></a>
-                            <a class="navbar-brand" href="index.html"><img src="{{ info.logo_hover.url }}" alt="Logo" class="img-2"></a>
+                            <a class="navbar-brand" href="{% url 'homepage:information' %}"><img src="{{ info.logo.url }}" alt="Logo" class="img-1"></a>
+                            <a class="navbar-brand" href="{% url 'homepage:information' %}"><img src="{{ info.logo_hover.url }}" alt="Logo" class="img-2"></a>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false"
@@ -30,7 +30,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{% url 'homepage:information' %}">Home</a>
                                         <a class="dropdown-item" href="{% url 'aboutpage:about' %}">About</a>
-                                        <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                                        <a class="dropdown-item" href="{% url 'project:list_view' %}">Portfolio</a>
                                         <a class="dropdown-item" href="{% url 'article:list_view' %}">Blog</a>
                                         <a class="dropdown-item" href="{% url 'contact_page:contact_us' %}">Contact</a>
                                         <a class="dropdown-item" href="elements.html">Elements</a>
@@ -40,7 +40,7 @@
                                     <a class="nav-link" href="{% url 'aboutpage:about' %}">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                                    <a class="nav-link" href="{% url 'project:list_view' %}">Portfolio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'article:list_view' %}">Blog</a>

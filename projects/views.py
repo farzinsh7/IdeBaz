@@ -1,3 +1,15 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Project ,Category
 
-# Create your views here.
+
+class ProjectListView(ListView):
+    model = Project
+    queryset = Project.objects.published()
+    template_name = 'project_list.html'
+    context_object_name = 'projects'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = Category.objects.all()
+        return context

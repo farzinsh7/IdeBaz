@@ -1,9 +1,8 @@
-# from django.urls import path
+from django.urls import path
+from .views import ProjectListView
 
-# app_name = 'project'
+app_name = 'project'
 
-# urlpatterns = [
-#     path('article/', ArticleListView.as_view(), name='list_view'),
-#     path('article/<slug:slug>', ArticleDetailView.as_view(), name='detail_view'),
-#     path('tags/<slug:slug>', TagList.as_view(), name='tag_view'),
-# ]
+urlpatterns = [
+    path('projects/', ProjectListView.as_view(), name='list_view'),
+]
