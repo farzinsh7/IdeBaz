@@ -1,0 +1,60 @@
+{% extends 'base/main_base.html' %}
+{% load thumbnail %}
+{% load static%}
+{% block content%}
+<div class="container">
+    <div class="portfolio-single-wrap unslate_co--section" id="portfolio-single-section">
+      <div class="portfolio-single-inner">
+        <h2 class="heading-portfolio-single-h2">{{ project.title|title }}</h2>
+        <div class="row justify-content-between align-items-stretch">
+          <div class="col-lg-8">
+            {% for gallery in project.galleries.all %}
+            <p><a href="{{ gallery.image.url }}" data-fancybox="gal">
+              {% thumbnail gallery.image "1275x850" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="Image" class="img-fluid">
+              {% endthumbnail %}
+            </a></p>
+            {% endfor %}
+          </div>
+          <div class="col-lg-4 pl-lg-5">
+            <div class="unslate_co--sticky">
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="detail-v1">
+                    <span class="detail-label">Project Description</span>
+                    <p>{{ project.description|safe }}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="detail-v1">
+                    <span class="detail-label">Project Date</span>
+                    <span class="detail-val">{{ project.date|date:"M d, Y" }}</span>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="detail-v1">
+                    <span class="detail-label">Role</span>
+                    <span class="detail-val">{% for cat in project.category.all %}<a href="#">{{ cat.title }}</a>, {% endfor %}</span>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="detail-v1">
+                    <span class="detail-label">Client</span>
+                    <span class="detail-val">{{ project.client }}</span>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="detail-v1">
+                    <span class="detail-label">Visit</span>
+                    <span class="detail-val"><a href="{{project.website}}">{{project.website}}</a></span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

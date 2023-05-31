@@ -16,7 +16,7 @@
                     </div>
                     <div class="blog-content">
                         <span></span>
-                        <h2>{{ article.title }}</h2>
+                        <h2>{{ article.title|title }}</h2>
                         <a href="#" class="post-date">{{ article.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ article.author }}</a>
                         <div>{{ article.description|safe }}</div>

@@ -1,21 +1,3 @@
-/* [Master Stylesheet] */
-
-/* ------------- Index of Stylesheet -------------
-:: 1.0 Import Web Fonts
-:: 2.0 Import All CSS
-:: 3.0 Common/Base CSS
-:: 4.0 Header Area CSS
-:: 5.0 Sidebar Area CSS
-:: 6.0 Welcome Area CSS
-:: 7.0 About Me Area CSS
-:: 8.0 Follow Instagram Area CSS
-:: 9.0 Footer Area CSS
-:: 10.0 Portfolio Area CSS
-:: 11.0 Blog & Contact Area CSS
-:: 12.0 Elements Area CSS
------------------------------------------------- */
-
-/* :: 1.0 Import Web Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 

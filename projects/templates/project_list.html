@@ -9,7 +9,7 @@
             <div class="portfolio-menu">
                 <button class="active btn" type="button" data-filter="*">All</button>
                 {% for cat in category %}
-                <button class="btn" type="button" data-filter=".{{cat.slug}}">{{cat.title}}</button>
+                <button class="btn" type="button" data-filter=".{{cat.slug}}">{{cat.title|title }}</button>
                 {% endfor %}
             </div>
         </div>
@@ -22,7 +22,7 @@
                 {% endthumbnail %}
                 <div class="hover_overlay">
                     <a class="gallery_img" href="{{ item.image.url }}"><i class="fa fa-eye"></i></a>
-                    <a class="gallery_link" href="{{ item.slug }}"><i class="fa fa-link"></i></a>
+                    <a class="gallery_link" href="{% url 'project:detail_view' item.slug %}"><i class="fa fa-link"></i></a>
                 </div>
             </div>
             {% endfor %}

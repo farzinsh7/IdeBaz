@@ -17,7 +17,7 @@
                     </div>
                     <div class="blog-content">
                         <span></span>
-                        <h2>{{ blog.title }}</h2>
+                        <h2>{{ blog.title|title }}</h2>
                         <a href="#" class="post-date">{{ blog.created|date:"M d, Y" }}</a>
                         <a href="#" class="post-author">By {{ blog.author }}</a>
                         <p>{{ blog.description|truncatewords:65|safe }}</p>

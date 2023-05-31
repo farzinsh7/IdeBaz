@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700'); */
+
 .logo {
     position: relative;
     width: 147px;
@@ -43,3 +45,41 @@
 .gallery_link i{
     padding-left: 10px;
 }
+
+/* Project Detail start*/
+
+.detail-v1 .detail-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: black;
+  }
+  
+  .detail-v1 .detail-val {
+    font-size: 16px;
+    color: black;
+  }
+  
+  .detail-v1 .detail-val a {
+    color: black;
+  }
+  
+  .detail-v1 p{
+    text-align:justify;
+  }
+  .unslate_co--sticky {
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 150px;
+  }
+  
+  .unslate_co--sticky:after, .unslate_co--sticky:before {
+    content: '';
+    display: table;
+  }
+
+  .portfolio-single-wrap{
+    margin: 15% 0;
+  }
