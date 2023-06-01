@@ -10,7 +10,7 @@
                 <div class="contact-heading-text text-center mb-100">
                     <span></span>
                     <h2>{{ contact.title }}</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate id justo quis facilisis. Vestibulum id orci ligula. Sed tempor, nunc ut sodales pulvinar, mauris ante euismod magna, at elementum lectus leo sed enim. Praesent dictum suscipit tincidunt. Nulla facilisi. Aenean in mollis orci. Ut interdum vulputate ante a egestas. Pellentesque varius purus malesuada arcu semper vehicula.</p>
+                    <p>{{ contact.description }}</p>
                 </div>
             </div>
             <!-- Contact Form Area -->
@@ -61,12 +61,12 @@
                         </div>
                         <!-- Single Footer Content -->
                         <div class="single-footer-content">
-                            <img src="img/core-img/smartphone.png" alt="">
+                            <img src="{% static 'img/core-img/smartphone.png' %}" alt="">
                             <a href="tel:{{ info.phone }}">{{ info.phone }}</a>
                         </div>
                         <!-- Single Footer Content -->
                         <div class="single-footer-content">
-                            <img src="img/core-img/envelope-2.png" alt="">
+                            <img src="{% static 'img/core-img/envelope-2.png' %}" alt="">
                             <a href="mailto:{{ info.email }}">{{ info.email }}</a>
                         </div>
                     </div>
