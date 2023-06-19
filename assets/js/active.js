@@ -193,3 +193,45 @@
     }
 
 })(jQuery);
+
+//Load-more-btn
+const projectBox = document.getElementById('projects-box')
+const spinnerBox = document.getElementById('spinner-box')
+const loadBtn = document.getElementById('load-btn')
+const loadBox = document.getElementById('loading-box')
+let visible = 3
+
+const handleGetData = () => {
+    $.ajax({
+        type: 'GET',
+        url: `/project-json/${visible}/`,
+        success: function (response) {
+            // console.log(response.max)
+            maxSize = response.max
+            const project = response.projects
+            spinnerBox.classList.remove('not-visible')
+            setTimeout(() => {
+                spinnerBox.classList.add('not-visible')
+                project.map(projects => {
+                    console.log(projects.id)
+                    projectBox.innerHTML += ``  
+                })
+            }, 500)
+
+            if (maxSize) {
+                console.log('Done')
+                loadBox.innerHTML = "<h4>No more Project to load</h4>"
+            }
+        },
+        error: function (error) {
+            console.log(error)
+        }
+    })
+}
+
+handleGetData()
+
+loadBtn.addEventListener('click', () => {
+    visible += 3
+    handleGetData()
+})

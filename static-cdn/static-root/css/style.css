@@ -83,3 +83,7 @@
   .portfolio-single-wrap{
     margin: 15% 0;
   }
+
+.not-visible{
+  display: none;
+}
