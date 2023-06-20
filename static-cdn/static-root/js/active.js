@@ -214,7 +214,13 @@ const handleGetData = () => {
                 spinnerBox.classList.add('not-visible')
                 project.map(projects => {
                     console.log(projects.id)
-                    projectBox.innerHTML += ``  
+                    projectBox.innerHTML += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits">
+                    <img src="${projects.image_url}">
+                    <div class="hover_overlay">
+                        <a class="gallery_img" href="${projects.image_url}"><i class="fa fa-eye"></i></a>
+                        <a class="gallery_link" href="/project/${projects.slug}/"><i class="fa fa-link"></i></a>
+                    </div>
+                </div>`  
                 })
             }, 500)
 
