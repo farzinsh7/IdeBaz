@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+from tinymce.models import HTMLField
 
 # Create your models here.
 class ProjectManager(models.Manager):
@@ -27,7 +27,7 @@ class Project(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=200, unique=True)
     category = models.ManyToManyField(Category, related_name='projects')
-    description = RichTextUploadingField()
+    description = HTMLField()
     image = models.ImageField(upload_to='project')
     website = models.CharField(max_length=150, null=True)
     date = models.DateField(null=True)

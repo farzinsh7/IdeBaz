@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6$5nc#17qrgza5nz%2m-n%w_0+4c8hkk+vr*fjh45k*)#j6(a+'
+SECRET_KEY = config('THE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,12 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_render_partial',
     'account.apps.AccountConfig',
+    'tinymce',
+    
+    
+    # Custom Apps
     'home_gallery.apps.HomeGalleryConfig',
     'about_us.apps.AboutUsConfig',
     'contact_us.apps.ContactUsConfig',
     'articles.apps.ArticlesConfig',
-    'ckeditor',
-    'ckeditor_uploader',
     'projects.apps.ProjectsConfig',
     'sorl.thumbnail',
 ]
@@ -85,11 +88,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'idebaz',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'F@rzin123'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -146,19 +146,57 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'account.User'
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': (
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Blockquote'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink', 'Anchor'],
-            ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
-            ['Styles', 'Format', 'Font', 'FontSize'],
-            ['TextColor', 'BGColor'],
-            ['Maximize', 'ShowBlocks', '-', 'pbckcode'],
-        ),
-    }
+TINYMCE_DEFAULT_CONFIG = {
+    "entity_encoding": "raw",
+    "theme": "silver",
+    "setup": "function(editor){editor.on('change', function(){editor.save();});}",
+    "menubar": "file edit view insert format tools table",
+    "plugins": 'print preview paste importcss searchreplace autolink autosave save code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap emoticons quickbars',
+    "toolbar": "fullscreen preview | undo redo | bold italic forecolor backcolor | formatselect | image link | "
+               "alignleft aligncenter alignright alignjustify | blocks | fonts | outdent indent |  numlist bullist checklist | fontsizeselect ",
+    "custom_undo_redo_levels": 50,
+    "image_dimensions": False,
+    "quickbars_insert_toolbar": False,
+    "setup": """function (editor) {
+        editor.on('SetContent', function (e) {
+            var imgs = editor.getDoc().getElementsByTagName('img');
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].style.width = '90%';
+            }
+        });
+    }""",
+    "file_picker_callback": """function (cb, value, meta) {
+        var input = document.createElement("input");
+        input.setAttribute("type", "file");
+        if (meta.filetype == "image") {
+            input.setAttribute("accept", "image/*");
+        }
+        if (meta.filetype == "media") {
+            input.setAttribute("accept", "video/*");
+        }
+
+        input.onchange = function () {
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function () {
+                var id = "blobid" + (new Date()).getTime();
+                var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                var base64 = reader.result.split(",")[1];
+                var blobInfo = blobCache.create(id, file, base64);
+                blobCache.add(blobInfo);
+
+                if (meta.filetype == "image") {
+                    cb(blobInfo.blobUri(), { title: file.name, width: '90%' });
+                } else {
+                    cb(blobInfo.blobUri(), { title: file.name });
+                }
+            };
+            reader.readAsDataURL(file);
+        };
+        input.click();
+    }""",
+    "content_style": "body { font-family:Roboto,Helvetica,Arial,sans-serif; font-size:14px }",
 }
+
+
