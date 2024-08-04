@@ -9,16 +9,20 @@ from contact_us.forms import ContactFormClass
 
 class HeaderView(ListView):
     model = Information
-    queryset = Information.objects.first()
     context_object_name = "info"
     template_name = "base/shared/header.html"
+    
+    def get_queryset(self):
+        return Information.objects.first()
 
 
 class FooterView(ListView):
     model = Information
-    queryset = Information.objects.first()
     context_object_name = "info"
     template_name = "base/shared/footer.html"
+    
+    def get_queryset(self):
+        return Information.objects.first()
 
 
 class HomeInformation(CreateView):
